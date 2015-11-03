@@ -10,7 +10,7 @@ package GUI;
  * @author Welington
  */
 public class TelaInicial extends javax.swing.JFrame {
-
+    Entity.Usuario usuario = new Entity.Usuario();
     /**
      * Creates new form TelaInicial
      */

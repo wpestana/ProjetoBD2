@@ -10,7 +10,13 @@ package Entity;
  * @author Welington
  */
 public class Filme {
-
+    
+    private int idFilme;
+    private String atorPrincipal;
+    private String genero;
+    private int duracao;
+    private String descricao;
+    
     public int getIdFilme() {
         return idFilme;
     }
@@ -50,9 +56,4 @@ public class Filme {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    private int idFilme;
-    private String atorPrincipal;
-    private String genero;
-    private int duracao;
-    private String descricao;
 }

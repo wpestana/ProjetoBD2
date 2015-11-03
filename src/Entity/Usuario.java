@@ -12,6 +12,18 @@ import java.util.ArrayList;
  * @author Welington
  */
 public class Usuario {
+    
+    private int idUsuario;
+    private String email;
+    private String telefone;
+    private String nome;
+    private String nomeUsuario; //apelido
+    private int diaNascimento;
+    private int mesNascimento;
+    private int anoNascimento;
+    private String senha;
+    private ArrayList<Integer> idAmigos = new ArrayList<>();
+    
 
     public int getIdUsuario() {
         return idUsuario;
@@ -61,12 +73,12 @@ public class Usuario {
         this.mesNascimento = mesNascimento;
     }
 
-    public int getAno() {
-        return ano;
+    public int getAnoNascimento() {
+        return anoNascimento;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setAnoNascimento(int anoNascimento) {
+        this.anoNascimento = anoNascimento;
     }
 
     public String getSenha() {
@@ -76,97 +88,19 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    private int idUsuario;
-    private String email;
-    private String nome;
-    private String nomeUsuario;
-    private int diaNascimento;
-    private int mesNascimento;
-    private int ano;
-    private String senha;
-    private endereco endereco;
-    private ArrayList<Integer> idAmigos = new ArrayList<>();
+    public String getTelefone() {
+        return telefone;
+    }
 
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+    
     public ArrayList<Integer> getIdAmigos() {
         return idAmigos;
     }
 
     public void setIdAmigos(ArrayList<Integer> idAmigos) {
         this.idAmigos = idAmigos;
-    }
-
-    public endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(endereco endereco) {
-        this.endereco = endereco;
-    }
-    
-    
-}
-class endereco{
-    private String rua;
-    private int numero;
-    private String complemento;
-    private String Bairro;
-    private int cep;
-    private String estado;
-    
-    public endereco(String rua, int numero, String complemento, String Bairro, int cep, String estado) {
-        this.rua = rua;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.Bairro = Bairro;
-        this.cep = cep;
-        this.estado = estado;
-    }
-
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public String getBairro() {
-        return Bairro;
-    }
-
-    public void setBairro(String Bairro) {
-        this.Bairro = Bairro;
-    }
-
-    public int getCep() {
-        return cep;
-    }
-
-    public void setCep(int cep) {
-        this.cep = cep;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
     }
 }
