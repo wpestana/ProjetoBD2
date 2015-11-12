@@ -11,20 +11,20 @@ package Entity;
  */
 public class Filme {
     
-    private int idFilme;
+    private String nomeFilme;
     private String atorPrincipal;
     private String genero;
     private int duracao;
     private String descricao;
     
-    public int getIdFilme() {
-        return idFilme;
+    public String getNomeFilme() {
+        return nomeFilme;
     }
 
-    public void setIdFilme(int idFilme) {
-        this.idFilme = idFilme;
+    public void setNomeFilme(String nomeFilme) {
+        this.nomeFilme = nomeFilme;
     }
-
+    
     public String getAtorPrincipal() {
         return atorPrincipal;
     }

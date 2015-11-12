@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import Entity.Filme;
 import Entity.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,6 +25,7 @@ public class FilmeDAO {
 
     Usuario usuario = new Usuario();
     Usuario usuarioNovo = new Usuario();//este usuario é apenas para para atualizar um usuario
+    Filme filme = new Filme();
     ConectaBanco conexao = new ConectaBanco();
     Connection c = conexao.getConnection(usuarioBanco, senhaBanco);
     
@@ -79,4 +81,82 @@ public class FilmeDAO {
             return null;
         } 
     }
+   
+    public void remover(String nome){
+        
+        try {
+            PreparedStatement p = c.prepareStatement("remove from "+nomeDoEsquema+" where nome = ?;");
+            p.setString(1, nome);
+            p.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(FilmeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void iserir(Filme filme){
+        try {
+            PreparedStatement p = c.prepareStatement("insert into "+nomeDoEsquema+" (nomeFilme, atorprincipal,genero,duracao,descricao) values ?,?,?,?,?;");
+            p.setString(1, filme.getNomeFilme());
+            p.setString(2, filme.getAtorPrincipal());
+            p.setString(3, filme.getGenero());
+            p.setInt(4, filme.getDuracao());
+            p.setString(5, filme.getDescricao());
+            p.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(FilmeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void alteraNome (String novoNome){
+        try {
+            PreparedStatement p = c.prepareStatement("update "+nomeDoEsquema+" set ? where nomeFilme = ?;");
+            p.setString(1, novoNome);
+            p.setString(2, filme.getNomeFilme());
+            p.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(FilmeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void alteraAtor(String novoFilme){
+        PreparedStatement p;
+        try {
+            p = c.prepareStatement("update "+nomeDoEsquema+" set atorPrincipal = ? where nomeFilme=?;");
+            p.setString(1, novoFilme);
+            p.setString(2, novoFilme);
+            p.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(FilmeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void alteraGenero(String novoGenero){
+        try {
+            PreparedStatement p = c.prepareStatement("update "+nomeDoEsquema+" set genero = ? where nomeFilme=?;");
+            p.setString(1,novoGenero);
+            p.setString(2,filme.getNomeFilme());
+            p.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(FilmeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    public void alteraDuracao(int novaDuracao){
+        try {
+            PreparedStatement p = c.prepareStatement("update "+nomeDoEsquema+" set duracao = ? where nomeFilme = ?;");
+            p.setInt(1, novaDuracao);
+            p.setString(2, filme.getNomeFilme());
+            p.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(FilmeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void alteraDescricao(String novaDescricao){
+        try {
+            PreparedStatement p = c.prepareStatement("update "+nomeDoEsquema+" set descricao = ? where nomeFilme = ?;");
+            p.setString(1,novaDescricao);
+            p.setString(2, filme.getNomeFilme());            
+            p.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(FilmeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+    }
+
 }

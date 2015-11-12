@@ -12,18 +12,23 @@ import java.util.ArrayList;
  * @author Welington
  */
 public class Usuario {
-    
     private int idUsuario;
+    private String apelido;
     private String email;
     private String telefone;
     private String nome;
     private String nomeUsuario; //apelido
-    private int diaNascimento;
-    private int mesNascimento;
-    private int anoNascimento;
+    private String diaNascimento;
+    private String mesNascimento;
+    private String anoNascimento;
+    private String dataNascimento;
     private String senha;
     private ArrayList<Integer> idAmigos = new ArrayList<>();
-    
+
+    public String getDataNascimento() {
+        dataNascimento=(getAnoNascimento()+"-"+getMesNascimento()+"-"+getDiaNascimento());
+        return dataNascimento;
+    }
 
     public int getIdUsuario() {
         return idUsuario;
@@ -57,27 +62,27 @@ public class Usuario {
         this.nomeUsuario = nomeUsuario;
     }
 
-    public int getDiaNascimento() {
+    public String getDiaNascimento() {
         return diaNascimento;
     }
 
-    public void setDiaNascimento(int diaNascimento) {
+    public void setDiaNascimento(String diaNascimento) {
         this.diaNascimento = diaNascimento;
     }
 
-    public int getMesNascimento() {
+    public String getMesNascimento() {
         return mesNascimento;
     }
 
-    public void setMesNascimento(int mesNascimento) {
+    public void setMesNascimento(String mesNascimento) {
         this.mesNascimento = mesNascimento;
     }
 
-    public int getAnoNascimento() {
+    public String getAnoNascimento() {
         return anoNascimento;
     }
 
-    public void setAnoNascimento(int anoNascimento) {
+    public void setAnoNascimento(String anoNascimento) {
         this.anoNascimento = anoNascimento;
     }
 
@@ -102,5 +107,13 @@ public class Usuario {
 
     public void setIdAmigos(ArrayList<Integer> idAmigos) {
         this.idAmigos = idAmigos;
+    }
+    
+    public String getApelido() {
+        return apelido;
+    }
+
+    public void setApelido(String apelido) {
+        this.apelido = apelido;
     }
 }
