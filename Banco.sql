@@ -1,10 +1,10 @@
-Ôªø--foi criado um banco de dados chamado BD2APS;
+--foi criado um banco de dados chamado BD2APS;
 
 CREATE USER admin WITH PASSWORD '1234';
 
 GRANT ALL PRIVILEGES ON DATABASE "BD2APS" to admin;
 
---comandos executados como o usu√°rio admin, criado anteirormente
+--comandos executados como o usu·rio admin, criado anteirormente
 --contato foi mudado para e-mail e telefone
 
 CREATE TABLE usuario(
@@ -62,8 +62,8 @@ delete from usuario;
 
 insert into filme 
   (nomeFilme, atorprincipal,genero,duracao,descricao)
-  values ('Top Gun','Tom Cruise', 'A√ß√£o',150,'filme antigo de avi√µes'),
-  ('Procurando Nemo','Nemo','infantil',160,'filme de um peixe palha√ßo que se perde');
+  values ('Top Gun','Tom Cruise', 'AÁ„o',150,'filme antigo de aviıes'),
+  ('Procurando Nemo','Nemo','infantil',160,'filme de um peixe palhaÁo que se perde');
 
 select * from filme;
 select * from filme where nomefilme = ('Top Gun');
@@ -77,12 +77,12 @@ insert into usuario (nome, apelido, senha, email, dataNascimento)
  ('Bruna','Bru','1234','bruna@hotmail.com','1990-06-30');
 
  select*from usuario where nome = 'Marta';
---ainda n√£o inseridos
+--ainda n„o inseridos
  insert into filme 
   (nomeFilme, atorprincipal,genero,duracao,descricao)
-  values ('Miss√£o Imposs√≠vel','Tom Cruise', 'A√ß√£o',150,'Ethan Hunt (Tom Cruise) descobre que o famoso Sindicato √© real, e est√° tentando destruir o IMF. Mas como combater uma na√ß√£o secreta, t√£o treinada e equipada quanto eles mesmos? O agente especial tem que contar com toda a ajuda dispon√≠vel, incluindo de pessoas n√£o muito confi√°veis...'),
-  ('Miss√£o Imposs√≠vel - Protocolo Fantasma','Tom Cruise','A√ß√£o',138,'O agente secreto Ethan Hunt (Tom Cruise) √© desautorizado pelo presidente dos Estados Unidos ap√≥s o pa√≠s ser acusado por um bombardeio no Kremlin. Tem in√≠cio o Protocolo Fantasma, que visa acabar com os agentes da IMF. Sem qualquer recurso ou apoio, Ethan precisa encontrar um meio de limpar seu nome e o da ag√™ncia em que trabalha. Para tanto passa a trabalhar com Benji (Simon Pegg) e Jane (Paula Patton), agentes renegados como ele, e ainda Brandt (Jeremy Renner), um ex-agente que agora trabalha como analista.'),
-  ('Miss√£o Imposs√≠vel', 'Tom Cruise','A√ß√£o',110,'Durante uma miss√£o de rotina em Praga, Ethan Hunt e seu grupo de agentes caem numa emboscada. Ethan descobre que apenas ele e uma outra agente sobreviveram. Ao ser acusado de ser o traidor que falhou a miss√£o ele foge e tenta provar sua inoc√™ncia, mas o verdadeiro inimigo est√° dentro da pr√≥pria ag√™ncia');
+  values ('Miss„o ImpossÌvel','Tom Cruise', 'AÁ„o',150,'Ethan Hunt (Tom Cruise) descobre que o famoso Sindicato È real, e est· tentando destruir o IMF. Mas como combater uma naÁ„o secreta, t„o treinada e equipada quanto eles mesmos? O agente especial tem que contar com toda a ajuda disponÌvel, incluindo de pessoas n„o muito confi·veis...'),
+  ('Miss„o ImpossÌvel - Protocolo Fantasma','Tom Cruise','AÁ„o',138,'O agente secreto Ethan Hunt (Tom Cruise) È desautorizado pelo presidente dos Estados Unidos apÛs o paÌs ser acusado por um bombardeio no Kremlin. Tem inÌcio o Protocolo Fantasma, que visa acabar com os agentes da IMF. Sem qualquer recurso ou apoio, Ethan precisa encontrar um meio de limpar seu nome e o da agÍncia em que trabalha. Para tanto passa a trabalhar com Benji (Simon Pegg) e Jane (Paula Patton), agentes renegados como ele, e ainda Brandt (Jeremy Renner), um ex-agente que agora trabalha como analista.'),
+  ('Miss„o ImpossÌvel', 'Tom Cruise','AÁ„o',110,'Durante uma miss„o de rotina em Praga, Ethan Hunt e seu grupo de agentes caem numa emboscada. Ethan descobre que apenas ele e uma outra agente sobreviveram. Ao ser acusado de ser o traidor que falhou a miss„o ele foge e tenta provar sua inocÍncia, mas o verdadeiro inimigo est· dentro da prÛpria agÍncia');
 
   select * from usuario;
 
